@@ -11,12 +11,13 @@ const FormContainer = styled.div`
 `
 
 export default function FormPage() {
+    const [count, setCount] = useState(0);
     const [input1, setInput1] = useState('');
     const [input2, setInput2] = useState('');
     const [input3, setInput3] = useState('');
 
     const handleFormSubmit = async () => {
-        console.log(input1, input2, input3);
+        setCount(count+1);
         // const response = await requestUtil.sendData(
         //     input1,
         //     input2,
@@ -27,6 +28,7 @@ export default function FormPage() {
 
     return (
         <FormContainer>
+            <h1>form submitted {count} times so far</h1>
                 <InputForm
                     handleInput1Change={setInput1}
                     handleInput2Change={setInput2}
